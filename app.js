@@ -9,20 +9,24 @@ var updateResults = (apiResult) => {
   results = apiResult['query']['search'];
   $("#results").empty();
   for(result of results) {
-    appendEntry(result['title'], result['snippet']);
+    appendEntry(result['title'], result['snippet'], result['pageid']);
   }
 }
 
-var appendEntry = (title, excerpt) => {
+var appendEntry = (title, excerpt, pageid) => {
   $("#results").append(
-    `<div class="result">
-      <h3>
-      ${title}
-      </h3>
-      <p>
-      ${excerpt}
-      </p>
-    </div>`
+    `
+    <a href="http://en.wikipedia.org/?curid=${pageid}">
+      <div class="result">
+        <h3>
+        ${title}
+        </h3>
+        <p>
+        ${excerpt}
+        </p>
+      </div>
+    </a>
+    `
 );
 }
 
