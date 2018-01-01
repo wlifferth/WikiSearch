@@ -7,22 +7,13 @@ var getResults = (query, callback) => {
 var updateResults = (apiResult) => {
   console.log(apiResult);
   results = apiResult['query']['search'];
+  $("#results").empty();
   for(result of results) {
     appendEntry(result['title'], result['snippet']);
   }
-  //$("#results").text(results.toString());
 }
 
 var appendEntry = (title, excerpt) => {
-  console.log(`<div class="result">
-    <h3>
-    ${title}
-    </h3>
-    <p>
-    ${excerpt}
-    </p>
-  </div>`);
-
   $("#results").append(
     `<div class="result">
       <h3>
@@ -36,5 +27,11 @@ var appendEntry = (title, excerpt) => {
 }
 
 $(document).ready(() => {
-    getResults("pie", updateResults);
+    $("#search-input").keyup((event) => {
+      if(event.keyCode === 13) {
+        var searchTerm = $("#search-input").val()
+        console.log(searchTerm)
+        getResults(searchTerm, updateResults);
+      }
+    });
 });
