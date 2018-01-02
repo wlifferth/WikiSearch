@@ -8,20 +8,24 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <div class="content row">
-    <div class="offset-2 col-8 offset-sm-1 col-sm-10 offset-xs-1 col-xs-1">
-    <h1 class="text-center">Search for anything on Wikipedia</h1>
-    <div class="row search-container">
-      <div class="col-6 offset-3">
-        <div id="search-box">
-          <input type="text" id="search-input" placeholder="Search"></input>
+  <div class="content">
+    <div class="row">
+      <div class="offset-2 col-8 offset-sm-1 col-sm-10 offset-xs-1 col-xs-1">
+      <h1 class="text-center">Search for anything on Wikipedia</h1>
+      <div class="row search-container">
+        <div class="col-6 offset-3">
+          <div id="search-box">
+            <input type="text" id="search-input" placeholder="Search"></input>
+          </div>
         </div>
       </div>
-      <div class="col-12">
-        <a class="material" target="new_tab" href="https://en.wikipedia.org/wiki/Special:Random">Random</a>
+      <div class="row">
+        <div class="offset-5 col-2 text-center">
+          <a class="material" target="new_tab" href="https://en.wikipedia.org/wiki/Special:Random">Random</a>
+        </div>
+      </div>
       </div>
     </div>
-    <div id="results"><div>
-    </div>
+    <div id="results"></div>
   </div>
 </body>
